@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Login Module</string>
+    <string name="login">Login</string>
+    <string name="email_id">Email Id</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="login_btn">LOGIN</string>
+    <string name="new_login">Don\'t have an account?</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="fundsindia">FundsIndia</string>
+    <string name="desc">Wealth India Financial Services Pvt.Ltd.</string>
+    <string name="desc_01">AMFI-Registered MutualFund</string>
+    <string name="desc_02">Distributor: ARN-69583 | SEBI Registration No: NSE/BSE - INZ000241638 | CDSL: In-DP-540-2020 | Research Analyst-INH200000394 | Investment Advisor-INA200002429 | NPS-POP232012019 | IRDA - CA0709</string>
+</resources>
