@@ -7,28 +7,64 @@
     tools:context=".FirstActivity">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="409dp"
+        android:id="@+id/textInputLayout"
+        android:layout_width="380dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        app:passwordToggleEnabled="true"
-        app:startIconDrawable="@drawable/ic_outline_lock_24"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:helperText="Required"
-        app:helperTextTextColor="@color/purple_200"
-        tools:layout_editor_absoluteY="83dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="83dp"
+        android:layout_marginEnd="64dp"
         app:counterEnabled="true"
         app:counterMaxLength="20"
+        app:helperText="Required"
+        app:helperTextTextColor="@color/purple_200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:startIconDrawable="@drawable/ic_baseline_person_outline_24"
         tools:ignore="MissingConstraints">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/userName"
-            android:layout_width="392dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:background="@drawable/ic_edittext_bg"
             android:hint="UserName"
-            android:maxLength="20"
-            android:inputType="textPassword"/>
+            android:maxLength="20" />
     </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout2"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="1dp"
+        app:helperText="Required"
+        app:helperTextTextColor="@color/purple_200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+        app:passwordToggleEnabled="true"
+        app:startIconDrawable="@drawable/ic_outline_lock_24">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/ic_edittext_bg"
+            android:hint="Password"
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="172dp"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
