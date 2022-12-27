@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:text="Sign Up"
+        android:text="@string/sn_sign_up"
         android:textSize="36sp"
         android:textStyle="bold"
         android:textColor="@color/black"
@@ -32,8 +32,9 @@
         android:drawableStart="@drawable/ic_baseline_person_outline_24"
         android:drawablePadding="10dp"
         android:ems="10"
-        android:hint="Name (as per PAN)"
-        android:inputType="textPersonName"
+        android:maxLength="20"
+        android:hint="@string/sn_name_hint"
+        android:inputType="text"
         android:paddingStart="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,7 +42,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sn_login"
         app:layout_constraintVertical_bias="0.106"
-        tools:ignore="RtlSymmetry" />
+        tools:ignore="RtlSymmetry"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/email_text"
@@ -52,7 +54,7 @@
         android:drawableStart="@drawable/ic_outline_email_24"
         android:paddingStart="15dp"
         android:drawablePadding="10dp"
-        android:inputType="textPersonName"
+        android:inputType="textEmailAddress"
         android:hint="@string/email_id"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -61,7 +63,8 @@
         android:background="@drawable/ic_edittext_bg"
         app:layout_constraintTop_toBottomOf="@+id/name_text"
         app:layout_constraintVertical_bias="0.039"
-        tools:ignore="RtlSymmetry" />
+        tools:ignore="RtlSymmetry"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/password_text"
@@ -69,7 +72,7 @@
         android:layout_height="45dp"
         android:layout_marginTop="16dp"
         android:ems="10"
-        android:hint="Password"
+        android:hint="@string/sn_password_hint"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.296"
@@ -80,7 +83,8 @@
         android:drawableStart="@drawable/ic_outline_lock_24"
         android:paddingStart="15dp"
         android:drawablePadding="10dp"
-        tools:ignore="RtlSymmetry" />
+        tools:ignore="RtlSymmetry"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/phone_number"
@@ -89,8 +93,8 @@
         android:layout_marginTop="16dp"
         android:ems="10"
         android:padding="2dp"
-        android:inputType="textPersonName"
-        android:hint="Mobile Number"
+        android:inputType="number"
+        android:hint="@string/sn_mobileNo_hint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.296"
         app:layout_constraintStart_toStartOf="parent"
@@ -99,7 +103,8 @@
         android:drawableStart="@drawable/ic_outline_phone_android_24"
         android:drawablePadding="10dp"
         android:paddingStart="15dp"
-        tools:ignore="RtlSymmetry" />
+        tools:ignore="RtlSymmetry,TextFields"
+        android:autofillHints="" />
 
 
     <androidx.appcompat.widget.AppCompatCheckBox
@@ -109,22 +114,24 @@
         android:layout_marginTop="16dp"
         android:paddingStart="5dp"
         android:background="@drawable/ic_checkbox_style"
-        android:text="Enable Whatsapp Notification"
+        android:text="@string/sn_checkbox_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.46"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phone_number" />
+        app:layout_constraintTop_toBottomOf="@+id/phone_number"
+        tools:ignore="RtlSymmetry" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/sn_signup"
         android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:background="@drawable/ic_login_btn"
-        android:text="Sign Up"
+        android:text="@string/sn_sign_up"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
+        android:enabled="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.46"
@@ -136,7 +143,7 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Already have an account ?"
+        android:text="@string/sn_noAcc_hint"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.35"
