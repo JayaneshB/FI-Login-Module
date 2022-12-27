@@ -95,6 +95,7 @@
         android:padding="2dp"
         android:inputType="number"
         android:hint="@string/sn_mobileNo_hint"
+        android:maxLength="10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.296"
         app:layout_constraintStart_toStartOf="parent"

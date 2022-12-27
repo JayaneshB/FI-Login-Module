@@ -20,10 +20,15 @@ class SignUPActivity : AppCompatActivity() {
     private lateinit var sn_password : TextView
     private lateinit var sn_mobileNo : TextView
 
+    private lateinit var helper:DBHelper
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_upactivity)
+
+        helper= DBHelper(this)
+
 
         sn_login = findViewById(R.id.snΩ_login)
         sn_signup = findViewById(R.id.sn_signup)
@@ -136,27 +141,38 @@ class SignUPActivity : AppCompatActivity() {
 
         })
 
+//        sn_signup.setOnClickListener {
+//
+//            val name = sn_name.text
+//            val email = sn_email_id.text
+//            val password = sn_password.text
+//            val phNo = sn_mobileNo.text
+//
+//
+//            if (TextUtils.isEmpty((name)) && TextUtils.isEmpty(email) && TextUtils.isEmpty(password) && TextUtils.isEmpty(
+//                    phNo
+//                )
+//            ) {
+//                Toast.makeText(
+//                    applicationContext,
+//                    "Please fill the requirements",
+//                    Toast.LENGTH_SHORT
+//                ).show()
+//            } else {
+//                Toast.makeText(applicationContext, "Signed Up successfully", Toast.LENGTH_SHORT)
+//                    .show()
+//            }
+//        }
+
+
         sn_signup.setOnClickListener {
 
-            val name = sn_name.text
-            val email = sn_email_id.text
-            val password = sn_password.text
-            val phNo = sn_mobileNo.text
+            helper.insertUserData(sn_name.text.toString(),sn_email_id.text.toString(),
+                sn_password.text.toString(), sn_mobileNo.text.toString())
+            Toast.makeText(applicationContext,"Signed up succesfully",Toast.LENGTH_SHORT).show()
+            val intent = Intent (applicationContext,MainActivity::class.java)
+            startActivity(intent)
 
-
-            if (TextUtils.isEmpty((name)) && TextUtils.isEmpty(email) && TextUtils.isEmpty(password) && TextUtils.isEmpty(
-                    phNo
-                )
-            ) {
-                Toast.makeText(
-                    applicationContext,
-                    "Please fill the requirements",
-                    Toast.LENGTH_SHORT
-                ).show()
-            } else {
-                Toast.makeText(applicationContext, "Signed Up successfully", Toast.LENGTH_SHORT)
-                    .show()
-            }
         }
     }
 

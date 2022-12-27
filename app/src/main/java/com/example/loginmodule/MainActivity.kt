@@ -4,22 +4,27 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
-import android.text.TextUtils
 import android.text.TextWatcher
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
 
+
 class MainActivity : AppCompatActivity() {
+
     private lateinit var login_btn : AppCompatButton
     private lateinit var email : TextView
     private lateinit var password : TextView
     private lateinit var btn_signup : AppCompatButton
     private lateinit var btn_forgot : AppCompatButton
+    private lateinit var helper:DBHelper
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        helper= DBHelper(this)
 
         login_btn = findViewById(R.id.btn_login)
         email = findViewById(R.id.Email_EditText)
@@ -56,7 +61,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 else {
                     login_btn.isEnabled=false
-                    email.setError("Enter valid email address")
+                    Toast.makeText(applicationContext,"Invalid email address",Toast.LENGTH_SHORT).show()
                 }
             }
 
@@ -68,25 +73,55 @@ class MainActivity : AppCompatActivity() {
 
 
         // Redirecting to First Activity
+//
+//        login_btn.setOnClickListener{
+//
+//            val email_id=email.text
+//            val pass_word=password.text
+//
+//            if (TextUtils.isEmpty(email_id)) {
+//                Toast.makeText(applicationContext,"Mandatory. Please enter your email ID",Toast.LENGTH_SHORT).show()
+//            } else if (TextUtils.isEmpty(pass_word) || pass_word.length <= 8 ) {
+//                Toast.makeText(applicationContext,"Mandatory. Minimum Length should be 8",Toast.LENGTH_SHORT).show()
+//            }
+//            else if (TextUtils.equals(email_id,"admin@gmail.com") && TextUtils.equals(pass_word,"admininfo")){
+//                Toast.makeText(applicationContext, "Login Successful", Toast.LENGTH_SHORT).show()
+//                val intent= Intent(applicationContext,FirstActivity::class.java)
+//                startActivity(intent)
+//            }
+//            else {
+//                Toast.makeText(applicationContext,"Invalid Login",Toast.LENGTH_SHORT).show()
+//            }
+//        }
 
-        login_btn.setOnClickListener{
+//
+//        var helper : DBHelper = DBHelper(applicationContext)
+//        var db = helper.readableDatabase
+//
+//        val email_id=email.text
+//        val pass=password.text
+//
+//        login_btn.setOnClickListener {
+//            var args = listOf<String>(email_id.toString(),pass.toString()).toTypedArray()
+//            var rs= db.rawQuery("SELECT * FROM USERS WHERE EMAIL = ? AND PASSWORD = ? ",args)
+//            if(rs.moveToNext()) {
+//                val intent = Intent(applicationContext,FirstActivity::class.java)
+//                startActivity(intent)
+//            }else {
+//                Toast.makeText(applicationContext,"Invalid Creditenials",Toast.LENGTH_SHORT).show()
+//            }
+//        }
 
-            val email_id=email.text
-            val pass_word=password.text
+        login_btn.setOnClickListener {
 
-            if (TextUtils.isEmpty(email_id)) {
-                Toast.makeText(applicationContext,"Mandatory. Please enter your email ID",Toast.LENGTH_SHORT).show()
-            } else if (TextUtils.isEmpty(pass_word) || pass_word.length <= 8 ) {
-                Toast.makeText(applicationContext,"Mandatory. Minimum Length should be 8",Toast.LENGTH_SHORT).show()
-            }
-            else if (TextUtils.equals(email_id,"admin@gmail.com") && TextUtils.equals(pass_word,"admininfo")){
-                Toast.makeText(applicationContext, "Login Successful", Toast.LENGTH_SHORT).show()
-                val intent= Intent(applicationContext,FirstActivity::class.java)
+            if(helper.verifyCredentials(email.text.toString(),password.text.toString())) {
+                val intent = Intent (applicationContext,FirstActivity::class.java)
                 startActivity(intent)
-            }
-            else {
-                Toast.makeText(applicationContext,"Invalid Login",Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(applicationContext,"Invalid Creditenials",Toast.LENGTH_SHORT).show()
             }
         }
+
     }
+
 }
