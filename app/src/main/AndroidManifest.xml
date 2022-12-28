@@ -17,9 +17,6 @@
             android:name=".ForgotPasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".DemoActivity"
-            android:exported="false" />
-        <activity
             android:name=".SignUPActivity"
             android:exported="false" />
         <activity

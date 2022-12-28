@@ -20,4 +20,6 @@
     <string name="sn_checkbox_text">Enable Whatsapp Notification</string>
     <string name="wealthIndia">Wealth India Financial Services Pvt. Ltd.</string>
     <string name="welcome_txt">Welcome to FundsIndia</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

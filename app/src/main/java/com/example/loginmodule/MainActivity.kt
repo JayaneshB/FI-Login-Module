@@ -67,6 +67,7 @@ class MainActivity : AppCompatActivity() {
                 else {
                     login_btn.isEnabled = false
                     email.setError("Invalid email Address")
+
                 }
             }
 
