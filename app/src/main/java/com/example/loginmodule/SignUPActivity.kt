@@ -20,28 +20,30 @@ class SignUPActivity : AppCompatActivity() {
     private lateinit var sn_password : TextView
     private lateinit var sn_mobileNo : TextView
 
-    private lateinit var helper:DBHelper
+    private lateinit var helper : DBHelper
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_upactivity)
 
-        helper= DBHelper(this)
+        helper = DBHelper (this)
 
 
-        sn_login = findViewById(R.id.snΩ_login)
-        sn_signup = findViewById(R.id.sn_signup)
-        sn_name = findViewById(R.id.name_text)
-        sn_password = findViewById(R.id.password_text)
-        sn_email_id = findViewById(R.id.email_text)
-        sn_mobileNo = findViewById(R.id.phone_number)
+        sn_login = findViewById (R.id.snΩ_login)
+        sn_signup = findViewById (R.id.sn_signup)
+        sn_name = findViewById (R.id.name_text)
+        sn_password = findViewById (R.id.password_text)
+        sn_email_id = findViewById (R.id.email_text)
+        sn_mobileNo = findViewById (R.id.phone_number)
 
         // Redirecting again to login page
 
         sn_login.setOnClickListener {
+
             val intent = Intent(applicationContext, MainActivity::class.java)
             startActivity(intent)
+
         }
 
         // For signing up we need to check the following constraints
@@ -49,16 +51,22 @@ class SignUPActivity : AppCompatActivity() {
         // Validating the correct Name format
 
         sn_name.addTextChangedListener(object : TextWatcher {
+
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+
             }
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
-                if(validateName(sn_name.text.toString())) {
-                    sn_signup.isEnabled=true
+                if (validateName(sn_name.text.toString())) {
+
+                    sn_signup.isEnabled = true
+
                 } else {
-                    sn_signup.isEnabled=false
+
+                    sn_signup.isEnabled = false
                     sn_name.setError("Enter the name correctly")
+
                 }
             }
 
@@ -70,19 +78,21 @@ class SignUPActivity : AppCompatActivity() {
         //Validating the email id
 
         sn_email_id.addTextChangedListener(object : TextWatcher {
+
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
             }
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
-                if(android.util.Patterns.EMAIL_ADDRESS.matcher(sn_email_id.text.toString()).matches()) {
+                if (android.util.Patterns.EMAIL_ADDRESS.matcher(sn_email_id.text.toString()).matches()) {
 
                     sn_login.isEnabled=true
-                }else {
+
+                } else {
 
                     sn_login.isEnabled=false
-                    sn_email_id.setError("Enter a valid email id")
+//                    Toast.makeText(applicationContext,"Enter a valid email address",Toast.LENGTH_SHORT).show()
                 }
 
             }
@@ -96,19 +106,24 @@ class SignUPActivity : AppCompatActivity() {
         // validating the password
 
         sn_password.addTextChangedListener(object:TextWatcher {
+
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
             }
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
-                val pass =sn_password.text.toString()
+                val pass = sn_password.text.toString()
 
-                if(TextUtils.isEmpty(pass) || pass.length <= 8 ){
+                if(TextUtils.isEmpty(pass) || pass.length <= 8 ) {
+
                     sn_signup.isEnabled=false
                     sn_password.setError("Minimum length should be 8")
+
                 } else {
+
                     sn_signup.isEnabled=true
+
                 }
             }
 
@@ -121,12 +136,14 @@ class SignUPActivity : AppCompatActivity() {
         // Validating the correct mobile number
 
         sn_mobileNo.addTextChangedListener(object : TextWatcher {
+
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+
             }
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
-                if(mobileNumberValidate(sn_mobileNo.text.toString())) {
+                if (mobileNumberValidate(sn_mobileNo.text.toString())) {
                     sn_signup.isEnabled=true
                 } else {
                     sn_signup.isEnabled=false

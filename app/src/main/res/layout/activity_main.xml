@@ -169,7 +169,7 @@
         android:layout_height="wrap_content"
         android:text="@string/desc_01"
         android:textColor="#3192A8"
-        android:textSize="13sp"
+        android:textSize="11sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
