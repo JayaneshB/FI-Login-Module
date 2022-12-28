@@ -158,29 +158,6 @@ class SignUPActivity : AppCompatActivity() {
 
         })
 
-//        sn_signup.setOnClickListener {
-//
-//            val name = sn_name.text
-//            val email = sn_email_id.text
-//            val password = sn_password.text
-//            val phNo = sn_mobileNo.text
-//
-//
-//            if (TextUtils.isEmpty((name)) && TextUtils.isEmpty(email) && TextUtils.isEmpty(password) && TextUtils.isEmpty(
-//                    phNo
-//                )
-//            ) {
-//                Toast.makeText(
-//                    applicationContext,
-//                    "Please fill the requirements",
-//                    Toast.LENGTH_SHORT
-//                ).show()
-//            } else {
-//                Toast.makeText(applicationContext, "Signed Up successfully", Toast.LENGTH_SHORT)
-//                    .show()
-//            }
-//        }
-
 
         sn_signup.setOnClickListener {
 

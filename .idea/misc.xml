@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/bg_first.xml" value="0.18" />
         <entry key="app/src/main/res/drawable/bg_theme_launcher.xml" value="0.159" />
         <entry key="app/src/main/res/drawable/ic_btn_bg.xml" value="0.18" />
         <entry key="app/src/main/res/drawable/ic_checkbox_style.xml" value="0.18" />
