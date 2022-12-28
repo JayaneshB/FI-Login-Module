@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.ContentValues
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import kotlin.properties.Delegates
 
 class DBHelper(context: Context) :
     SQLiteOpenHelper(context,"USERDB",null,1) {
@@ -30,7 +29,7 @@ class DBHelper(context: Context) :
 //
 //        db?.execSQL(query)
 
-        db?.execSQL("CREATE TABLE USER ( ID INTEGER PRIMARY KEY AUTOINCREMENT," +
+        db?.execSQL("CREATE TABLE IF NOT EXISTS USER ( ID INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "NAME VARCHAR(30),EMAIL VARCHAR(100),PASSWORD VARCHAR(20),MOBILENO VARCHAR(20) )")
 
 
