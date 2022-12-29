@@ -1,5 +1,7 @@
 package com.example.loginmodule
 
+
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,6 +13,8 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import androidx.appcompat.app.AppCompatActivity
+
+
 
 
 class Home : Fragment() {
@@ -35,12 +39,15 @@ class Home : Fragment() {
         val activity = activity as AppCompatActivity
         val actionBar = activity.supportActionBar
 
+        actionBar?.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.black)))
+
         val drawerlayout : DrawerLayout = view.findViewById(R.id.drawer_layout)
         val navview : NavigationView = view.findViewById(R.id.nav_view)
 
         toggle = ActionBarDrawerToggle(activity,drawerlayout,R.string.open,R.string.close)
         drawerlayout.addDrawerListener(toggle)
         toggle.syncState()
+
 
         actionBar?.setDisplayHomeAsUpEnabled(true)
 
@@ -66,6 +73,9 @@ class Home : Fragment() {
         }
 
         return view
+
+
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
