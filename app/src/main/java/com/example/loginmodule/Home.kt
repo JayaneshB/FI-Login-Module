@@ -3,30 +3,26 @@ package com.example.loginmodule
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.drawerlayout.widget.DrawerLayout
+import com.google.android.material.navigation.NavigationView
+import androidx.appcompat.app.AppCompatActivity
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [Home.newInstance] factory method to
- * create an instance of this fragment.
- */
 class Home : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
+
+    private lateinit var toggle : ActionBarDrawerToggle
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
+        setHasOptionsMenu(true)
+
     }
 
     override fun onCreateView(
@@ -34,26 +30,54 @@ class Home : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
-    }
+        val view = inflater.inflate(R.layout.fragment_home, container, false)
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment Home.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            Home().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+        val activity = activity as AppCompatActivity
+        val actionBar = activity.supportActionBar
+
+        val drawerlayout : DrawerLayout = view.findViewById(R.id.drawer_layout)
+        val navview : NavigationView = view.findViewById(R.id.nav_view)
+
+        toggle = ActionBarDrawerToggle(activity,drawerlayout,R.string.open,R.string.close)
+        drawerlayout.addDrawerListener(toggle)
+        toggle.syncState()
+
+        actionBar?.setDisplayHomeAsUpEnabled(true)
+
+        navview.setNavigationItemSelectedListener {
+            when(it.itemId) {
+                R.id.mutual_funds -> Toast.makeText(activity,"Redirecting",Toast.LENGTH_SHORT).show()
+                R.id.Systematic_plans -> Toast.makeText(activity,"Redirecting",Toast.LENGTH_SHORT).show()
+                R.id.nominee -> Toast.makeText(activity,"Redirecting",Toast.LENGTH_SHORT).show()
+                R.id.calculator -> Toast.makeText(activity,"Redirecting",Toast.LENGTH_SHORT).show()
+                R.id.stocks -> Toast.makeText(activity,"Redirecting",Toast.LENGTH_SHORT).show()
+                R.id.ipo -> Toast.makeText(activity,"Redirecting",Toast.LENGTH_SHORT).show()
+                R.id.insights -> Toast.makeText(activity,"Redirecting",Toast.LENGTH_SHORT).show()
+                R.id.talk_to_us -> Toast.makeText(activity,"Redirecting",Toast.LENGTH_SHORT).show()
+                R.id.reach_us -> Toast.makeText(activity,"Redirecting",Toast.LENGTH_SHORT).show()
+                R.id.referals -> Toast.makeText(activity,"Redirecting",Toast.LENGTH_SHORT).show()
+                R.id.settings -> Toast.makeText(activity,"Redirecting",Toast.LENGTH_SHORT).show()
+
+                else -> {
+
                 }
             }
+            true
+        }
+
+        return view
     }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        if(toggle.onOptionsItemSelected(item)) {
+
+            return true
+
+         }
+
+        return super.onOptionsItemSelected(item)
+    }
+
 }
+

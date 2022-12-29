@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <item
+        android:id="@+id/mutual_funds"
+        android:icon="@drawable/ic_mutualfunds"
+        android:title="Mutual Funds" />
+    <item
+        android:id="@+id/Systematic_plans"
+        android:icon="@drawable/ic_plan"
+        android:title="My Systematic plans" />
+
+    <item
+        android:id="@+id/nominee"
+        android:icon="@drawable/ic_baseline_person_outline_24"
+        android:title="Nominee" />
+
+    <item
+        android:id="@+id/calculator"
+        android:title="Calculator"
+        android:icon="@drawable/ic_outline_calculate_24"/>
+
+    <group>
+
+        <item
+            android:id="@+id/stocks"
+            android:icon="@drawable/ic_stocks"
+            android:title="Stocks">
+
+        </item>
+
+        <item
+            android:id="@+id/ipo"
+            android:icon="@drawable/ic_ipo"
+            android:title="IPO" />
+    </group>
+
+    <group>
+
+        <item
+            android:id="@+id/insights"
+            android:icon="@drawable/ic_insights"
+            android:title="Insights">
+
+        </item>
+
+        <item
+            android:id="@+id/talk_to_us"
+            android:icon="@drawable/ic_talktous"
+            android:title="Tak to us" />
+
+        <item
+            android:id="@+id/reach_us"
+            android:icon="@drawable/ic_reachus"
+            android:title="Reach us" />
+
+    </group>
+
+    <group>
+
+        <item
+            android:id="@+id/referals"
+            android:icon="@drawable/ic_referals"
+            android:title="Referals">
+
+        </item>
+
+        <item
+            android:id="@+id/settings"
+            android:icon="@drawable/ic_settings"
+            android:title="Settings" />
+
+    </group>
+
+
+</menu>
