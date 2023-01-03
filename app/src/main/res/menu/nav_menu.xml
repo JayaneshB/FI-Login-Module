@@ -21,7 +21,9 @@
         android:title="Calculator"
         android:icon="@drawable/ic_outline_calculate_24"/>
 
-    <group>
+    <group
+        android:visible="true"
+        android:menuCategory="container">
 
         <item
             android:id="@+id/stocks"
@@ -36,7 +38,9 @@
             android:title="IPO" />
     </group>
 
-    <group>
+    <group
+        android:menuCategory="container"
+        android:visible="true">
 
         <item
             android:id="@+id/insights"
@@ -57,7 +61,10 @@
 
     </group>
 
-    <group>
+    <group
+
+        android:menuCategory="container"
+        android:visible="true">
 
         <item
             android:id="@+id/referals"

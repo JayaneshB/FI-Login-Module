@@ -1,21 +1,23 @@
 package com.example.loginmodule
 
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.drawerlayout.widget.DrawerLayout
+import com.google.android.material.navigation.NavigationView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [Profile.newInstance] factory method to
- * create an instance of this fragment.
- */
 class Profile : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
@@ -23,10 +25,7 @@ class Profile : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
     }
 
     override fun onCreateView(
@@ -37,23 +36,47 @@ class Profile : Fragment() {
         return inflater.inflate(R.layout.fragment_profile, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment Profile.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            Profile().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
+//    override fun onDestroy() {
+//        super.onDestroy()
+//        Log.d("lifecycle","destroyed")
+//        Toast.makeText(activity,"Process destroyed", Toast.LENGTH_SHORT).show()
+//    }
+//
+//    override fun onStart() {
+//        super.onStart()
+//        Log.d("lifecycle","started")
+//        Toast.makeText(activity,"Process started",Toast.LENGTH_SHORT).show()
+//    }
+//
+//    override fun onResume() {
+//        super.onResume()
+//        Log.d("lifecycle","resume")
+//        Toast.makeText(activity,"Process resumed",Toast.LENGTH_SHORT).show()
+//    }
+//
+//    override fun onPause() {
+//        super.onPause()
+//        Log.d("lifecycle","paused")
+//        Toast.makeText(activity,"Process paused",Toast.LENGTH_SHORT).show()
+//    }
+//
+//    override fun onStop() {
+//        super.onStop()
+//        Log.d("lifecycle","stoped")
+//        Toast.makeText(activity,"Process stoped",Toast.LENGTH_SHORT).show()
+//    }
+//
+//    override fun onDestroyView() {
+//        super.onDestroyView()
+//        Log.d("lifecycle","destroyview")
+//        Toast.makeText(activity,"Process destroy view",Toast.LENGTH_SHORT).show()
+//    }
+//
+//    override fun onDetach() {
+//        super.onDetach()
+//        Log.d("lifecycle","detached")
+//        Toast.makeText(activity,"Process detached",Toast.LENGTH_SHORT).show()
+//    }
+//
+
 }

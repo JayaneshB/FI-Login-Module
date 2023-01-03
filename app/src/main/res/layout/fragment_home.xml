@@ -37,10 +37,6 @@
         android:fitsSystemWindows="true">
 
 
-
-
-
-
     </com.google.android.material.navigation.NavigationView>
 
 

@@ -1,18 +1,21 @@
 package com.example.loginmodule
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.example.loginmodule.databinding.ActivityFirstBinding
-import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class FirstActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityFirstBinding
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        Log.d("lifecycle","created")
 
         binding = ActivityFirstBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -30,6 +33,7 @@ class FirstActivity : AppCompatActivity() {
             true
         }
     }
+
 
     private fun replaceFragments(fragment: Fragment) {
         val fragmentManager: FragmentManager = supportFragmentManager

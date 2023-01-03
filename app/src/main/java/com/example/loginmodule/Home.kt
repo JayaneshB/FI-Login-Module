@@ -1,6 +1,5 @@
 package com.example.loginmodule
 
-
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,18 +8,16 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
-import androidx.appcompat.app.AppCompatActivity
-
-
-
 
 class Home : Fragment() {
 
 
-    private lateinit var toggle : ActionBarDrawerToggle
+    private lateinit var toggle: ActionBarDrawerToggle
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,32 +35,38 @@ class Home : Fragment() {
 
         val activity = activity as AppCompatActivity
         val actionBar = activity.supportActionBar
-
         actionBar?.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.black)))
 
-        val drawerlayout : DrawerLayout = view.findViewById(R.id.drawer_layout)
-        val navview : NavigationView = view.findViewById(R.id.nav_view)
+        val drawerlayout: DrawerLayout = view.findViewById(R.id.drawer_layout)
+        val navview: NavigationView = view.findViewById(R.id.nav_view)
+        actionBar?.setDisplayHomeAsUpEnabled(true)
 
-        toggle = ActionBarDrawerToggle(activity,drawerlayout,R.string.open,R.string.close)
+        toggle = ActionBarDrawerToggle(activity, drawerlayout, R.string.open, R.string.close)
         drawerlayout.addDrawerListener(toggle)
         toggle.syncState()
 
 
-        actionBar?.setDisplayHomeAsUpEnabled(true)
+
+//        actionBar?.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM)
+
 
         navview.setNavigationItemSelectedListener {
-            when(it.itemId) {
-                R.id.mutual_funds -> Toast.makeText(activity,"Redirecting",Toast.LENGTH_SHORT).show()
-                R.id.Systematic_plans -> Toast.makeText(activity,"Redirecting",Toast.LENGTH_SHORT).show()
-                R.id.nominee -> Toast.makeText(activity,"Redirecting",Toast.LENGTH_SHORT).show()
-                R.id.calculator -> Toast.makeText(activity,"Redirecting",Toast.LENGTH_SHORT).show()
-                R.id.stocks -> Toast.makeText(activity,"Redirecting",Toast.LENGTH_SHORT).show()
-                R.id.ipo -> Toast.makeText(activity,"Redirecting",Toast.LENGTH_SHORT).show()
-                R.id.insights -> Toast.makeText(activity,"Redirecting",Toast.LENGTH_SHORT).show()
-                R.id.talk_to_us -> Toast.makeText(activity,"Redirecting",Toast.LENGTH_SHORT).show()
-                R.id.reach_us -> Toast.makeText(activity,"Redirecting",Toast.LENGTH_SHORT).show()
-                R.id.referals -> Toast.makeText(activity,"Redirecting",Toast.LENGTH_SHORT).show()
-                R.id.settings -> Toast.makeText(activity,"Redirecting",Toast.LENGTH_SHORT).show()
+            when (it.itemId) {
+                R.id.mutual_funds -> Toast.makeText(activity, "Redirecting", Toast.LENGTH_SHORT)
+                    .show()
+                R.id.Systematic_plans -> Toast.makeText(activity, "Redirecting", Toast.LENGTH_SHORT)
+                    .show()
+                R.id.nominee -> Toast.makeText(activity, "Redirecting", Toast.LENGTH_SHORT).show()
+                R.id.calculator -> Toast.makeText(activity, "Redirecting", Toast.LENGTH_SHORT)
+                    .show()
+                R.id.stocks -> Toast.makeText(activity, "Redirecting", Toast.LENGTH_SHORT).show()
+                R.id.ipo -> Toast.makeText(activity, "Redirecting", Toast.LENGTH_SHORT).show()
+                R.id.insights -> Toast.makeText(activity, "Redirecting", Toast.LENGTH_SHORT).show()
+                R.id.talk_to_us -> Toast.makeText(activity, "Redirecting", Toast.LENGTH_SHORT)
+                    .show()
+                R.id.reach_us -> Toast.makeText(activity, "Redirecting", Toast.LENGTH_SHORT).show()
+                R.id.referals -> Toast.makeText(activity, "Redirecting", Toast.LENGTH_SHORT).show()
+                R.id.settings -> Toast.makeText(activity, "Redirecting", Toast.LENGTH_SHORT).show()
 
                 else -> {
 
@@ -75,19 +78,17 @@ class Home : Fragment() {
         return view
 
 
-
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
-        if(toggle.onOptionsItemSelected(item)) {
+        if (toggle.onOptionsItemSelected(item)) {
 
             return true
 
-         }
+        }
 
         return super.onOptionsItemSelected(item)
     }
 
 }
-

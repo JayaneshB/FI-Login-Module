@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextUtils
 import android.text.TextWatcher
+import android.util.Log
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
@@ -20,10 +21,20 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btn_forgot : AppCompatButton
     private lateinit var helper : DBHelper
 
+    val TAG =MainActivity::class.java.simpleName
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+//        Log.d(TAG,"created")
+
+
+        // hiding the action bar from the main activity
+
+        if (supportActionBar != null) {
+            supportActionBar!!.hide()
+        }
 
         helper= DBHelper (this)
 
@@ -124,5 +135,41 @@ class MainActivity : AppCompatActivity() {
 //        }
 
     }
-
+    // Setting the log for checking the lifecycle of the activity
+//
+//    override fun onStart() {
+//        super.onStart()
+//        Log.d("lifecycle","started")
+//        Toast.makeText(applicationContext,"Process started",Toast.LENGTH_SHORT).show()
+//    }
+//
+//    override fun onResume() {
+//        super.onResume()
+//        Log.d("lifecycle","resume")
+//        Toast.makeText(applicationContext,"Process resumed",Toast.LENGTH_SHORT).show()
+//    }
+//
+//    override fun onPause() {
+//        super.onPause()
+//        Log.d("lifecycle","paused")
+//        Toast.makeText(applicationContext,"Process paused",Toast.LENGTH_SHORT).show()
+//    }
+//
+//    override fun onStop() {
+//        super.onStop()
+//        Log.d("lifecycle","stoped")
+//        Toast.makeText(applicationContext,"Process stoped",Toast.LENGTH_SHORT).show()
+//    }
+//
+//    override fun onRestart() {
+//        super.onRestart()
+//        Log.d("lifecycle","restarted")
+//        Toast.makeText(applicationContext,"Process restarted",Toast.LENGTH_SHORT).show()
+//    }
+//
+//    override fun onDestroy() {
+//        super.onDestroy()
+//        Log.d("lifecycle","destroyed")
+//        Toast.makeText(applicationContext,"Process destroyed",Toast.LENGTH_SHORT).show()
+//    }
 }
